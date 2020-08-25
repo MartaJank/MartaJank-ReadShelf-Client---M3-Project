@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+}
+
+.nav-logo {
+  height: 3rem;
+}
+
+.cards-img {
+  height: 10rem;
+}
+
+.description-img {
+  height: 20rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
