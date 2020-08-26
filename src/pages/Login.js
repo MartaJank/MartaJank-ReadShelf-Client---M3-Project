@@ -21,19 +21,24 @@ class Login extends Component {
 
     return (
       <div>
-        <form onSubmit={this.handleFormSubmit}>
-          
-          <label>Email:</label>
-          <input type="text" name="email" value={email} onChange={this.handleChange}/>
+        <div className="form-div-border">
+          <form className="form form-login" onSubmit={this.handleFormSubmit}>
 
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+            <label>Email</label>
+            <input className="form-input form-input-login" type="text" name="email" value={email} onChange={this.handleChange}/>
 
-          <input type="submit" value="LOG IN" />
-        </form>
+            <label>Password</label>
+            <input className="form-input form-input-login" type="password" name="password" value={password} onChange={this.handleChange} />
 
-        <p>Don't have an account yet?</p>
-        <Link to={"/signup"}>Sign Up</Link>
+            <input className="form-btn" type="submit" value="LOG IN" />
+          </form>
+          <div className="after-form after-form-login">
+            <p>Don't have an account yet?</p>
+            <Link className="form-link" to={"/signup"}>Sign Up</Link>
+          </div>
+        </div>
+        <div className="form-div">
+        </div>
       </div>
     );
   }

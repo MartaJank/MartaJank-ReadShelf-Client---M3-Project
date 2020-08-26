@@ -37,25 +37,34 @@ function Home() {
         </ul>  
       </div>
       <div className="home-bookshelf">
-        <div><img className="description-img" alt="book and coffee and raffaello" src="../images/coffee-2784289.jpg" /></div>
-        <div>
-          <h4>SORT YOUR BOOKSHELF</h4>
-          <hr />
-          <p>Once you create your bookshelf you'll be able to sort your books by the ones you own in paper, ebook or audiobook.</p>
-          <p>You can also sort them by the ones you've read, the ones you have in progress and the pending ones you'd love to read!</p>
+        <div className="home-bk-left">
+          <img className="description-img" alt="book and coffee and raffaello" src="../images/coffee-2784289 copy.jpg" />
+        </div>
+        <div className="home-bk-right">
+          <h4 className="home-right-title">SORT YOUR BOOKSHELF</h4>
+          <hr className="home-right-hr" />
+          <p className="home-right-p">Once you create your bookshelf you'll be able to sort your books by the ones you own in paper, ebook or audiobook.</p>
+          <p className="home-right-p">You can also sort them by the ones you've read, the ones you have in progress and the pending ones you'd love to read!</p>
         </div>
       </div>
-      <div>
-        <div>
-          <h4>CREATE A BOOK CLUB</h4>
-          <hr />
-          <p>You can either join or create a book club!</p>
-          <p>If you're not into any of the book clubs that you find you can always create and manage your own!</p>
-          <p>It's easier than you think!</p>
-          <button>TRY IT HERE</button>
+      <div className="home-club-all">
+        <hr className="main-hr" />
+        <div className="home-club">  
+          <div className="home-club-left">
+            <h4 className="home-right-title">CREATE A BOOK CLUB</h4>
+            <hr className="home-club-hr" />
+            <p className="home-right-p">You can either join or create a book club!</p>
+            <p className="home-right-p">If you're not into any of the book clubs that you find you can always create and manage your own!</p>
+            <p className="home-right-p">It's easier than you think!</p>
+            <button className="card-btn">TRY IT HERE</button>
+          </div>
+          <div className="home-club-right">
+            <img className="description-img-club" alt="person in socks on a blankett reading" src="../images/book-1031359.jpg" />
+          </div>
         </div>
-        <div><img className="description-img" alt="person in socks on a blankett reading" src="../images/book-1031359.jpg" /></div>
+        <hr className="main-hr" />
       </div>
+      
     </div>
   )
 }

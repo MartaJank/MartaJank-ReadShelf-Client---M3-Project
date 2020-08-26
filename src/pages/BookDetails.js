@@ -66,12 +66,6 @@ class BookDetails extends Component {
                 <div>
                     <button>ADD TO...</button>
                 </div>
-                <div>
-                <p>COMMENTS</p>
-                    <form>
-                        <input type="text" />
-                    </form>
-                </div>
             </div>
         )
     }

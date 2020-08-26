@@ -20,22 +20,29 @@ class Signup extends Component {
     const { username, email, password } = this.state;
     return (
       <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <div className="form-div-border">
+        <form className="form" onSubmit={this.handleFormSubmit}>
 
-          <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange} />
+          <label>Name</label>
+          <input className="form-input" type="text" name="username" value={username} onChange={this.handleChange} />
 
-          <label>Email:</label>
-          <input type="text" name="email" value={email} onChange={this.handleChange} />
+          <label>Email</label>
+          <input className="form-input" type="text" name="email" value={email} onChange={this.handleChange} />
 
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+          <label>Password</label>
+          <input className="form-input" type="password" name="password" value={password} onChange={this.handleChange} />
 
-          <input type="submit" value="SIGN UP" />
+          <input className="form-btn" type="submit" value="SIGN UP" />
         </form>
+        <div className="after-form">
+          <p>Already have an account?</p>
+          <Link className="form-link" to={"/login"}>Login</Link>
+        </div> 
+      </div>
+      <div className="form-div">
         
-        <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
+      </div>
+        
       </div>
     );
   }

@@ -5,6 +5,8 @@
 body {
   font-family: 'Red Hat Text', sans-serif;
   background-color: #E8E3DF;
+  padding: 0;
+  margin: 0;
 }
 
 nav {
@@ -15,7 +17,7 @@ nav {
   height: 3rem;
 }
 
-/* Horitzontal Scroll */
+/************************ Horitzontal Scroll **************************/
 
 .horitzontal-scroll {
   padding: 1rem;
@@ -25,7 +27,7 @@ nav {
 .hs {
   display: flex;
   flex-direction: row;
-  padding: 0 20px;
+  padding: 0 28px;
   overflow-x: scroll;
   scroll-snap-type: x proximity;
 }
@@ -43,7 +45,7 @@ ul {
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -52,15 +54,14 @@ ul {
   -webkit-box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
-  min-height: 25rem;
-  min-width: 15rem;
+  min-height: 20rem;
+  min-width: 12rem;
   color: var(--brown);
-  padding: 1rem;
-  padding-top: 0;
+  padding: 0 1rem;
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: 400;
   padding-top: 1.7rem;
   margin: 0;
@@ -69,45 +70,221 @@ ul {
 .card-hr {
   padding-top: 0;
   border: 1px var(--brown) solid;
-  width: 10rem;
+  width: 8rem;
 
 }
 
 .card-text {
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: center;
   color: var(--brown);
 }
 
 .cards-img {
-  height: 12rem;
-  padding-top: 0;
-  margin-top: 0;
+  height: 10rem;
+  width: 14rem;
+  padding: 0;
+  margin: 0;
 }
 
 .card-btn {
   border-radius: 0;
   border: 2px var(--brown) solid;
   width: 8rem;
+  margin-bottom: 1rem;
+  color: var(--brown);
 }
 
+/************************ Home Description Big Cards ***********************************/
 .home-bookshelf {
   display: flex;
-  margin: 0;
-  padding: 0;
   margin-top: 3rem;
+  height: 18rem;
+  -webkit-box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+  margin-bottom: 5rem;
+}
+
+.home-bk-left {
+  width: 50%;
 }
 
 .description-img {
-  height: 40rem;
-  width: 40rem;
-  margin-left: 0;
-  padding-left: 0;
-  display: flex;
+  height: 18rem;
 }
 
-.footer {
+.home-bk-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5rem;
+  background-color: #ededed;
+}
+
+.home-right-title {
+  font-size: 0.8rem;
+  color: var(--brown);
+  font-weight: 400;
+}
+
+.home-right-hr {
+  width: 7rem;
+  padding: 0;
+  margin: 0;
+  color: var(--brown);
+}
+
+.home-right-p {
+  font-size: 0.7rem;
+  text-align: center;
+  color: var(--brown);
+}
+
+.home-club-all {
+  margin-bottom: 3rem;
+}
+
+.main-hr {
+  width: 95%;
+}
+
+.home-club {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: 18rem;
+}
+
+.home-club-left {
+  width: 60%;
+  color: var(--brown);
+  padding: 0.5rem;
+  border-right: 2px solid;
+  text-align: center;
+}
+
+.home-club-hr {
+  width: 8rem;
+}
+
+.home-club-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 40%;
+  padding: 1rem;
+}
+
+.description-img-club {
+  height: 16rem;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/******************** FORM DIVS *************************/
+.form-div {
+  margin: 2rem;
+  height: 27rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #ededed;
+}
+
+.form-div-border {
+  border: 2px  var(--brown) solid;
+  margin: 1rem;
+  height: 27rem;
+  width: 18rem;
+  position: absolute;
+  overflow: visible;
+}
+
+.form {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  width: 15rem;
+  color: var(--brown);
+}
+
+.form-input {
+  border: none;
+  background-color: #ededed;
+  border-bottom: 2px var(--brown) solid;
+  margin-bottom: 3rem;
+  height: 2rem;
+  font-size: 1rem;
+  color: var(--brown);
+}
+
+.form-btn {
+  margin-left: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.5rem;
+  border-radius: 0;
+  border: 2px var(--brown) solid;
+  width: 10rem;
+  margin-bottom: 1rem;
+  color: var(--brown);
+  background-color: #E8E3DF;
+}
+
+.after-form {
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 0.8rem;
+}
+
+.form-link  {
+  padding-top: 0.7rem;
+  color: var(--brown);
+}
+
+.form-login {
+  height: 17rem;
+}
+
+.form-input-login {
+  padding-top: 0;
+  margin-bottom: 3;
+}
+
+.after-form-login {
+  line-height: 0;
+  height: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+/********************* FOOTER *************************/
+.footer {
+  position: relative;
+  bottom: -80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--brown);
+  font-size: 0.6rem;
+  padding: 1rem;
+  line-height: 0.4;
+  background-color: #ededed;
+  -webkit-box-shadow: inset 0px 6px 16px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 6px 16px -8px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 6px 16px -8px rgba(0,0,0,0.75);
+}
+
+.footer-link {
+  color: var(--brown);
+}
+
+.footer-info {
+  text-align: right;
 }

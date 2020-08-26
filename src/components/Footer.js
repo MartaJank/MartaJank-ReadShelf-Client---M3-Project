@@ -5,11 +5,11 @@ class Footer extends Component {
         return (
             <div className="footer">
                 <div>
-                    <p>Powered by Marta J.</p>
+                    <p><b>Powered by Marta J.</b></p>
                 </div>
-                <div>
-                    <p>READ SHELF © 2020</p>
-                    <p>Pictures by <a href="https://www.freepik.es/home">Freepic</a></p>
+                <div className="footer-info">
+                    <p><b>READ SHELF © 2020</b></p>
+                    <p>Pictures by <a className="footer-link" href="https://www.freepik.es/home">Freepic</a></p>
                     <p>Design by Marta J.</p>
                 </div>
             </div>
