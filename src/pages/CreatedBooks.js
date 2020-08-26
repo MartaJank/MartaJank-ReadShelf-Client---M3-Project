@@ -33,7 +33,7 @@ class CreatedBooks extends Component {
                     return (
                         <div>
                             <Link to={`/books/created/one/${book._id}`}>
-                                <img src={book.img} />
+                                <img src={book.imageUrl} />
                                 <p>{book.title}</p>
                             </Link>       
                         </div>

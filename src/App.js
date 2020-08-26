@@ -24,6 +24,12 @@ import CreatedDetails from "./pages/CreatedDetails";
 import GetAllClubs from "./pages/GetAllClubs";
 import ClubDetails from "./pages/ClubDetails";
 import Bookshelf from "./pages/Bookshelf";
+import Tracking from "./pages/Tracking";
+import AddClub from "./pages/AddClub";
+import CreatedClubs from "./pages/CreatedClubs";
+import BookshelfPaper from "./pages/BookshelfPaper";
+import BookshelfEbooks from "./pages/BookshelfEbooks";
+import BookshelfAudiobooks from "./pages/BookshelfAudiobooks";
 
 
 
@@ -48,7 +54,13 @@ class App extends Component {
             <PrivateRoute exact path='/books/created/one/:id' component={CreatedDetails} />
             <Route exact path='/book-clubs' component={GetAllClubs} />
             <Route exact path='/book-clubs/:id' component={ClubDetails} />
+            <PrivateRoute exact path='/book-clubs/club/add' component={AddClub} />
+            <PrivateRoute exact path='/book-clubs/:id/created' component={CreatedClubs} />
             <PrivateRoute exact path='/bookshelf' component={Bookshelf} />
+            <PrivateRoute exact path='/lists/:id/bookshelf/paper' component={BookshelfPaper} />
+            <PrivateRoute exact path='/lists/:id/bookshelf/ebook' component={BookshelfEbooks} />
+            <PrivateRoute exact path='/lists/:id/bookshelf/audiobook' component={BookshelfAudiobooks} />
+            <PrivateRoute exact path='/tracking' component={Tracking} />
             <Route exact path='/faq' component={faq} />
           </Switch>
 

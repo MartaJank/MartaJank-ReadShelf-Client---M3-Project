@@ -12,7 +12,7 @@ class BookshelfAudiobooks extends Component {
     }
 
     getAudiobooks = () => {
-        axios.get(`${process.env.REACT_APP_API_URI}/${this.props.user._id}/bookshelf/audiobook`, {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_API_URI}/lists/${this.props.user._id}/bookshelf/audiobook`, {withCredentials: true})
         .then(responseFromApi => {
             this.setState({
                 listOfAudiobooks: responseFromApi.data

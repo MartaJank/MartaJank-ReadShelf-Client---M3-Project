@@ -12,7 +12,7 @@ class TrackingRead extends Component {
     }
 
     getRead = () => {
-        axios.get(`${process.env.REACT_APP_API_URI}/${this.props.user._id}/reads-tracking/read`, {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_API_URI}/lists/${this.props.user._id}/reads-tracking/read`, {withCredentials: true})
         .then(responseFromApi => {
             this.setState({
                 listOfRead: responseFromApi.data

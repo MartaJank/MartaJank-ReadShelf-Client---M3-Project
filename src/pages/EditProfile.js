@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { withAuth } from "../lib/AuthProvider";
+import service from '../lib/service'
 
 class EditProfile extends Component {
     constructor(props){
@@ -8,14 +9,33 @@ class EditProfile extends Component {
         this.state = {
             username: this.props.user.username,
             email: this.props.user.email,
-            img: this.props.user.img
+            imageUrl: this.props.user.imageUrl
         }
+    }
+
+    handleFileUpload = e => {
+        console.log("The file to be uploaded is: ", e.target.files[0]);
+
+        const uploadData = new FormData();
+        // imageUrl => this name has to be the same as in the model since we pass
+        // req.body to .create() method when creating a new thing in '/api/things/create' POST route
+        uploadData.append("imageUrl", e.target.files[0]);
+        
+        service.handleUpload(uploadData)
+        .then(response => {
+            console.log('response is: ', response);
+            // after the console.log we can see that response carries 'secure_url' which we can use to update the state 
+            this.setState({ imageUrl: response.secure_url });
+          })
+          .catch(err => {
+            console.log("Error while uploading the file: ", err);
+          });
     }
 
     handleFormSubmit = event => {
         const username = this.state.username;
         const email = this.state.email;
-        const img = this.state.img;
+        const imageUrl = this.state.imageUrl;
 
         event.preventDefault();
 
@@ -24,7 +44,7 @@ class EditProfile extends Component {
             .patch(`${process.env.REACT_APP_API_URI}/profile/${this.props.user._id}/edit`, {
                 username,
                 email,
-                img
+                imageUrl
             }, {withCredentials: true})
             .then(() => {
                 this.props.history.push(`/profile`)
@@ -42,13 +62,15 @@ class EditProfile extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleFormSubmit}>
+                <form onSubmit={e => this.handleFormSubmit(e)}>
                     <label>Name</label>
-                    <input type="text" name="username" value={this.state.title} onChange={e => this.handleChange(e)} />
+                    <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
                     <label>Email</label>
                     <input type="text" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
-                    {/* <label>Profile picture</label>
-                    <input /> */}
+                    <input 
+                    type="file" 
+                    onChange={(e) => this.handleFileUpload(e)} 
+                    />
 
                     <input type="submit" value="Submit" />
                 </form>

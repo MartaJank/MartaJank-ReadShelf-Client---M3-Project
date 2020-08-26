@@ -8,18 +8,18 @@ class Private extends Component {
   render() {
     return (
       <div>
-        <div>
-          <img src={this.props.user.img} />
-          <h1>{this.props.user.username}</h1>
+        <div className="profile-pic-div">
+          <img className="profile-pic" src={this.props.user.imageUrl} />
         </div>
-        <div>
-          <Link to={`/profile/${this.props.user._id}/edit`}><button>Edit</button></Link>
+        <div className="user-info">
+          <h2 className="username">{this.props.user.username}</h2>
+          <Link to={`/profile/${this.props.user._id}/edit`}><button className="profile-edit-btn">Edit</button></Link>
         </div>
-        <div>
-          <button>My Bookshelf</button>
-          <button>Reads Tracking</button>
-          <button>My Book Clubs</button>
-          <Link to={`/books/created/${this.props.user._id}`}><button>Created Books</button></Link>
+        <div className="buttons-div">
+          <Link to={'/bookshelf'}><button className="profile-btn">My Bookshelf</button></Link>
+          <Link to={'/tracking'}><button className="profile-btn">Reads Tracking</button></Link>
+          <Link to={`/book-clubs/${this.props.user._id}/created`}><button className="profile-btn">My Book Clubs</button></Link>
+          <Link to={`/books/created/${this.props.user._id}`}><button className="profile-btn">Created Books</button></Link>
         </div>
       </div>
     );

@@ -31,7 +31,9 @@ class CreatedDetails extends Component {
     render() {
         return (
             <div>
-                <img src={this.state.img} />
+                <img src={this.state.imageUrl} />
+                <p>{this.state.title}</p>
+                <p>{this.state.description}</p>
                 <Link to={`/books/${this.state._id}/edit`}><button>Edit</button></Link>
             </div>
             

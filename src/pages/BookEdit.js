@@ -6,15 +6,42 @@ class BookEdit extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: this.props.theBook.title,
-            author: this.props.theBook.author,
-            description: this.props.theBook.description,
-            year: this.props.theBook.year,
-            publishingHouse: this.props.theBook.publishingHouse,
-            isbn: this.props.theBook.isbn,
-            img: this.props.theBook.img
+            title: '',
+            author: '',
+            description: '',
+            year: '',
+            publishingHouse: '',
+            isbn: '',
+            imageUrl: ''
         }
     }
+
+    componentDidMount() {
+        this.getCreatedBook();
+    }
+
+    getCreatedBook = () => {
+        const { params } = this.props.match;
+        console.log('params', params.id)
+        axios  
+            .get(`${process.env.REACT_APP_API_URI}/books/created/one/${params.id}`, {withCredentials: true})
+            .then(responseFromApi => {
+                const theBook = responseFromApi.data;
+                console.log('book', theBook)
+                this.setState({
+                    title: theBook.title,
+                    author: theBook.author,
+                    description: theBook.description,
+                    year: theBook.year,
+                    publishingHouse: theBook.publishingHouse,
+                    isbn: theBook.isbn,
+                    imageUrl: theBook.ImageUrl
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
 
     handleFormSubmit = event => {
         const title = this.state.title;
@@ -23,19 +50,20 @@ class BookEdit extends Component {
         const year = this.state.year;
         const publishingHouse = this.state.publishingHouse;
         const isbn = this.state.isbn;
-        const img = this.state.img;
+        const imageUrl = this.state.imageUrl;
 
         event.preventDefault();
 
+        const { params } = this.props.match;
         axios
-            .patch(`${process.env.REACT_APP_API_URI}/books/${this.props.theBook._id}/edit`, {
+            .patch(`${process.env.REACT_APP_API_URI}/books/${params.id}/edit`, {
                 title,
                 author,
                 description,
                 year,
                 publishingHouse,
                 isbn,
-                img
+                imageUrl
             }, {withCredentials: true})
             .then(() => {
                 this.props.history.push(`/books/created/${this.props.user._id}`)
@@ -66,8 +94,8 @@ class BookEdit extends Component {
                     <input type="text" name="publishingHouse" value={this.state.publishingHouse} onChange={e => this.handleChange(e)} />
                     <label>ISBN</label>
                     <input type="text" name="isbn" value={this.state.isbn} onChange={e => this.handleChange(e)} />
-                    <label>Book Cover</label>
-                    <input type="text" name="img" value={this.state.img} onChange={e => this.handleChange(e)} />
+                    {/* <label>Book Cover</label>
+                    <input type="text" name="img" value={this.state.img} onChange={e => this.handleChange(e)} /> */}
 
                     <input type="submit" value="Submit" />
                 </form>

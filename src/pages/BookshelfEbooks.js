@@ -12,7 +12,7 @@ class BookshelfEbooks extends Component {
     }
 
     getEBooks = () => {
-        axios.get(`${process.env.REACT_APP_API_URI}/${this.props.user._id}/bookshelf/ebook`, {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_API_URI}/lists/${this.props.user._id}/bookshelf/ebook`, {withCredentials: true})
         .then(responseFromApi => {
             this.setState({
                 listOfEBooks: responseFromApi.data

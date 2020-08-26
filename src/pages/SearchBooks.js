@@ -33,6 +33,10 @@ class SearchBooks extends Component {
                         </div>
                     )
                 }) : null}
+                <div>
+                    <p>Can't find the book?</p>
+                    <Link to={'/books/book/add'}>Create one!</Link>
+                </div>
             </div>
         )
     }

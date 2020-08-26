@@ -26,8 +26,7 @@ class GetAllClubs extends Component {
     render() {
         return (
             <div>
-                <button>CREATE A BOOK CLUB</button>
-                <button>MY BOOK CLUBS</button>
+                <Link to={'/book-clubs/club/add'}><button>CREATE A BOOK CLUB</button></Link>
                 {this.state.listOfClubs.map(club => {
                     return (
                         <div>
@@ -39,7 +38,7 @@ class GetAllClubs extends Component {
                                 <hr />
                                 <p>{club.description}</p>
                                 <p>Currrent book: {club.currentBookTitle}</p>
-                                <Link to={``}><button>More info</button></Link>
+                                <Link to={`/book-clubs/${club._id}`}><button>More info</button></Link>
                             </div>
                         </div>
                     )

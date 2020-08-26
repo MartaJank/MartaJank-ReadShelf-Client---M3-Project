@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 
+
 class Navbar extends Component {
     
   
@@ -17,9 +18,9 @@ class Navbar extends Component {
             <p className='navbar-user'>Hi {user.username}!</p>
             <Link to={'/profile'}>Profile</Link>
             <Link to={'/books'}>Find Books</Link>
-            <p>My Bookshelf</p>
-            <p>Reads Tracking</p>
-            <p>Book Club</p>
+            <Link to={'/bookshelf'}><p>My Bookshelf</p></Link>
+            <Link to={'/tracking'}><p>Reads Tracking</p></Link>
+            <Link to={'/book-clubs'}><p>Book Club</p></Link>
             <button className='navbar-button' onClick={logout}>
               Logout
             </button>

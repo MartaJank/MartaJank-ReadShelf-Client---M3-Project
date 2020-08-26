@@ -12,7 +12,7 @@ class TrackingProgress extends Component {
     }
 
     getProgress = () => {
-        axios.get(`${process.env.REACT_APP_API_URI}/${this.props.user._id}/reads-tracking/in-progress`, {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_API_URI}/lists/${this.props.user._id}/reads-tracking/in-progress`, {withCredentials: true})
         .then(responseFromApi => {
             this.setState({
                 listOfProgress: responseFromApi.data

@@ -12,8 +12,9 @@ class BookshelfPaper extends Component {
     }
 
     getPaperBooks = () => {
-        axios.get(`${process.env.REACT_APP_API_URI}/${this.props.user._id}/bookshelf/paper`, {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_API_URI}/api/lists/${this.props.user._id}/bookshelf/paper`, {withCredentials: true})
         .then(responseFromApi => {
+            console.log('response', responseFromApi)
             this.setState({
                 listOfPaperBooks: responseFromApi.data
             })
@@ -25,6 +26,7 @@ class BookshelfPaper extends Component {
     }
     
     render() {
+        console.log(this.state)
         return (
             <div>
                 <Link to={`/lists/${this.props.user._id}/bookshelf/paper`}><button>Paper</button></Link>
