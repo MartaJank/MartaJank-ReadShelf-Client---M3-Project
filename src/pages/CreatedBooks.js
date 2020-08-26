@@ -27,6 +27,8 @@ class CreatedBooks extends Component {
     render() {
         return (
             <div>
+                <h5>BOOKS CREATED</h5>
+                <hr />
                 {this.state.listOfBooks.map(book => {
                     return (
                         <div>

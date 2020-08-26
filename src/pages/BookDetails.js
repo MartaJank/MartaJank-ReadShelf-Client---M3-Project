@@ -61,6 +61,9 @@ class BookDetails extends Component {
                     }
                 </div>
                 <div>
+                    {this.state.creator === this.props.user._id ? <button>Edit</button> : null}
+                </div>
+                <div>
                     <button>ADD TO...</button>
                 </div>
                 <div>

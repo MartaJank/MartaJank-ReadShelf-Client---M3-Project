@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 class GetAllClubs extends Component {
     constructor(props) {
-        super()
+        super(props)
         this.state = {
             listOfClubs: []
         };
@@ -26,10 +26,21 @@ class GetAllClubs extends Component {
     render() {
         return (
             <div>
+                <button>CREATE A BOOK CLUB</button>
+                <button>MY BOOK CLUBS</button>
                 {this.state.listOfClubs.map(club => {
                     return (
                         <div>
-                            <p>{club.title}</p>
+                            <div>
+                                <img src={club.img} />
+                            </div>
+                            <div>
+                                <p>{club.title}</p>
+                                <hr />
+                                <p>{club.description}</p>
+                                <p>Currrent book: {club.currentBookTitle}</p>
+                                <Link to={``}><button>More info</button></Link>
+                            </div>
                         </div>
                     )
                 })}

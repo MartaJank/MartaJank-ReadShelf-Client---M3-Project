@@ -22,6 +22,9 @@ import EditProfile from "./pages/EditProfile"
 import CreatedBooks from "./pages/CreatedBooks";
 import CreatedDetails from "./pages/CreatedDetails";
 import GetAllClubs from "./pages/GetAllClubs";
+import ClubDetails from "./pages/ClubDetails";
+import Bookshelf from "./pages/Bookshelf";
+
 
 
 class App extends Component {
@@ -44,6 +47,8 @@ class App extends Component {
             <PrivateRoute exact path='/books/created/:id' component={CreatedBooks} />
             <PrivateRoute exact path='/books/created/one/:id' component={CreatedDetails} />
             <Route exact path='/book-clubs' component={GetAllClubs} />
+            <Route exact path='/book-clubs/:id' component={ClubDetails} />
+            <PrivateRoute exact path='/bookshelf' component={Bookshelf} />
             <Route exact path='/faq' component={faq} />
           </Switch>
 

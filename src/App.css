@@ -1,3 +1,12 @@
+:root {
+  --brown: #473D3A;
+}
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  background-color: #E8E3DF;
+}
+
 nav {
   display: flex;
 }
@@ -6,12 +15,95 @@ nav {
   height: 3rem;
 }
 
+/* Horitzontal Scroll */
+
+.horitzontal-scroll {
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
+.hs {
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hs > li,
+.item {
+  scroll-snap-align: center;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hs > li {
+  background-color: #ededed;
+  -webkit-box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+  min-height: 25rem;
+  min-width: 15rem;
+  color: var(--brown);
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding-top: 1.7rem;
+  margin: 0;
+}
+
+.card-hr {
+  padding-top: 0;
+  border: 1px var(--brown) solid;
+  width: 10rem;
+
+}
+
+.card-text {
+  font-size: 1rem;
+  text-align: center;
+  color: var(--brown);
+}
+
 .cards-img {
-  height: 10rem;
+  height: 12rem;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.card-btn {
+  border-radius: 0;
+  border: 2px var(--brown) solid;
+  width: 8rem;
+}
+
+.home-bookshelf {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-top: 3rem;
 }
 
 .description-img {
-  height: 20rem;
+  height: 40rem;
+  width: 40rem;
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
 }
 
 .footer {

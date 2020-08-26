@@ -4,37 +4,39 @@ function Home() {
   return (
     <div> 
       <h1>Carousel</h1>
-      <div>
-        <article>
-          <img className="cards-img" alt="flying books and boy in the forest" src="../images/2375391.jpg" />
-          <h5>FIND AMAZING BOOKS</h5>
-          <hr />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lectus vitae ipsum convallis sodales eu a leo.</p>
-          <button>Book finder</button>
-        </article>
-        <article>
-          <img className="cards-img" alt="opened book with bookshelf background" src="../images/5920.jpg" />
-          <h5>BUILD YOUR BOOKSHELF</h5>
-          <hr />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lectus vitae ipsum convallis sodales eu a leo.</p>
-          <button>Build a Bookshelf</button>
-        </article>
-        <article>
-          <img className="cards-img" alt="coffee and book and lavender" src="../images/coffee-2151200.jpg" />
-          <h5>YOUR READING HABITS</h5>
-          <hr />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lectus vitae ipsum convallis sodales eu a leo.</p>
-          <button>Track your reads</button>
-        </article>
-        <article>
-          <img className="cards-img" alt="girl with socks and a coffee reading" src="../images/books-3454381.jpg" />
-          <h5>JOIN A BOOK CLUB</h5>
-          <hr />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lectus vitae ipsum convallis sodales eu a leo.</p>
-          <button>Join</button>
-        </article>
+      <div className="horitzontal-scroll">
+        <ul className="hs">
+          <li className="item">
+            <img className="cards-img" alt="flying books and boy in the forest" src="../images/2375391.jpg" />
+            <h5 className="card-title">FIND AMAZING BOOKS</h5>
+            <hr className="card-hr" />
+            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lectus vitae ipsum convallis sodales eu a leo.</p>
+            <button className="card-btn">Book finder</button>
+          </li>
+          <li className="item">
+            <img className="cards-img" alt="opened book with bookshelf background" src="../images/5920.jpg" />
+            <h5 className="card-title">BUILD YOUR BOOKSHELF</h5>
+            <hr className="card-hr" />
+            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lectus vitae ipsum convallis sodales eu a leo.</p>
+            <button className="card-btn">Build a Bookshelf</button>
+          </li>
+          <li className="item">
+            <img className="cards-img" alt="coffee and book and lavender" src="../images/coffee-2151200.jpg" />
+            <h5 className="card-title">YOUR READING HABITS</h5>
+            <hr className="card-hr" />
+            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lectus vitae ipsum convallis sodales eu a leo.</p>
+            <button className="card-btn">Track your reads</button>
+          </li>
+          <li className="item">
+            <img className="cards-img" alt="girl with socks and a coffee reading" src="../images/books-3454381.jpg" />
+            <h5 className="card-title">JOIN A BOOK CLUB</h5>
+            <hr className="card-hr" />
+            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lectus vitae ipsum convallis sodales eu a leo.</p>
+            <button className="card-btn">Join</button>
+          </li>
+        </ul>  
       </div>
-      <div>
+      <div className="home-bookshelf">
         <div><img className="description-img" alt="book and coffee and raffaello" src="../images/coffee-2784289.jpg" /></div>
         <div>
           <h4>SORT YOUR BOOKSHELF</h4>
