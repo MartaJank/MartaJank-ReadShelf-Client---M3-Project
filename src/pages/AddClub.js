@@ -49,27 +49,32 @@ class AddClub extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleFormSubmit}>
+            <div className="form-div-border club-edit-form">
+                <form className="form" onSubmit={this.handleFormSubmit}>
                     <label>Club Name</label>
-                    <input type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
+                    <input className="form-input" type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
 
                     <label>Description</label>
-                    <textarea name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
+                    <textarea className="form-textarea" name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
 
                     <label>Current Book Title</label>
-                    <input type="text" name="currentBookTitle" value={this.state.currentBookTitle} onChange={e => this.handleChange(e)} />
+                    <input className="form-input" type="text" name="currentBookTitle" value={this.state.currentBookTitle} onChange={e => this.handleChange(e)} />
 
                     <label>Meeting Date</label>
-                    <input type="text" name="meetingDate"  value={this.state.meetingDate} onChange={e => this.handleChange(e)} />
+                    <input className="form-input" type="text" name="meetingDate"  value={this.state.meetingDate} onChange={e => this.handleChange(e)} />
 
                     <label>Meeting Hour</label>
-                    <input type="text" name="meetingHour" value={this.state.meetingHour} onChange={e => this.handleChange(e)} />
+                    <input className="form-input" type="text" name="meetingHour" value={this.state.meetingHour} onChange={e => this.handleChange(e)} />
 
-                    <label>Meeting Date</label>
-                    <input type="text" name="meetingLink" value={this.state.meetingLink} onChange={e => this.handleChange(e)} />
+                    <label>Meeting Link</label>
+                    <input className="form-input" type="text" name="meetingLink" value={this.state.meetingLink} onChange={e => this.handleChange(e)} />
 
-                    <input type="submit" value="Submit" />
+                    <input className="form-btn" type="submit" value="Submit" />
                 </form>
+            </div>
+            <div className="form-div club-edit-form">
+        
+            </div>
             </div>
         )
     }

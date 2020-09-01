@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { withAuth } from "../lib/AuthProvider";
 
 class GetAllClubs extends Component {
     constructor(props) {
@@ -26,19 +27,20 @@ class GetAllClubs extends Component {
     render() {
         return (
             <div>
-                <Link to={'/book-clubs/club/add'}><button>CREATE A BOOK CLUB</button></Link>
+                <div className="created-btns club-btns">
+                    <Link to={'/book-clubs/club/add'}><button className="club-btn">CREATE A BOOK CLUB</button></Link>
+                     <Link to={`/book-clubs/${this.props.user._id}/created`}><button className="club-btn">MY BOOKCLUBS</button></Link>
+                </div>
+                
                 {this.state.listOfClubs.map(club => {
                     return (
                         <div>
-                            <div>
-                                <img src={club.img} />
-                            </div>
-                            <div>
-                                <p>{club.title}</p>
+                            <div className="club-card">
+                                <h3>{club.title}</h3>
                                 <hr />
                                 <p>{club.description}</p>
                                 <p>Currrent book: {club.currentBookTitle}</p>
-                                <Link to={`/book-clubs/${club._id}`}><button>More info</button></Link>
+                                <Link to={`/book-clubs/${club._id}`}><button className="card-btn">More info</button></Link>
                             </div>
                         </div>
                     )
@@ -48,4 +50,4 @@ class GetAllClubs extends Component {
     }
 }
 
-export default GetAllClubs
+export default withAuth(GetAllClubs)

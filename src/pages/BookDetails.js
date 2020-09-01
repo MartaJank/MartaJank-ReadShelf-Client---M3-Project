@@ -8,12 +8,14 @@ class BookDetails extends Component {
         super(props);
         this.state = {
             theBook: {},
-            okMessage: ''
+            okMessage: '',
+            allKindOfBooksList: []
         };
     }
     
     componentDidMount() {
         this.getBook();
+        this.getAllKindOfBooks();
     }
 
     getBook = () => {
@@ -32,11 +34,45 @@ class BookDetails extends Component {
             });
     };
 
+    getAllKindOfBooks = () => {
+        
+        axios.get(`${process.env.REACT_APP_API_URI}/searchBooks/allkindofbooks`)
+        .then(responseFrom => {
+            this.setState({allKindOfBooksList: responseFrom.data})
+        })
+        .catch(err => console.error(err))
+
+    }
+
     addToList = (listName) => {
         const { params } = this.props.match;
+        console.log('bookObj', this.state.theBook)
+        const bookObj  =  { id: this.state.theBook.id, volumeInfo: this.state.theBook.volumeInfo}
+        
+
         axios
-            .post(`${process.env.REACT_APP_API_URI}/books/${this.props.user._id}/push/${params.id}/${listName}`, {withCredentials: true})
+            .post(`${process.env.REACT_APP_API_URI}/books/${this.props.user._id}/push/${listName}`, bookObj, {withCredentials: true})
             .then(responseFromApi => {
+                console.log(responseFromApi)
+                this.setState({okMessage: 'Book Added'})
+                this.getAllKindOfBooks()
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+
+    removeFromList = (listName) => {
+        const { params } = this.props.match;
+        console.log('bookObj', this.state.theBook)
+        const bookObj  = {id: this.state.theBook.id, volumeInfo: this.state.theBook.volumeInfo}
+        console.log(bookObj)
+        const bookobjId = bookObj.id
+
+        axios
+            .delete(`${process.env.REACT_APP_API_URI}/books/${this.props.user._id}/pull/${listName}/${bookobjId}`, {withCredentials: true})
+            .then(responseFromApi => {
+                console.log(responseFromApi, 'sdgjdgjsjbbkfs')
                 this.setState({okMessage: 'Book Added'})
             })
             .catch(err => {
@@ -45,48 +81,66 @@ class BookDetails extends Component {
     }
     
     render() {
+        console.log(this.state.allKindOfBooksList)
         return (
             <div>
-                <div>
+                <div className="full-book">
                     {this.state.theBook.volumeInfo && 
                     <>
-                    <div>
+                    <div className="cover-part">
                         <img alt="book cover" src={this.state.theBook ? this.state.theBook.volumeInfo.imageLinks.thumbnail : null } />
-                        <p>Rating: {this.state.theBook.volumeInfo.averageRating}/5</p>
+                        <p className="rating">Rating: {this.state.theBook.volumeInfo.averageRating}/5</p>
                     </div>
-                    <h3>{this.state.theBook.volumeInfo.title.toUpperCase()}</h3>
-                    <hr />
-                    <h6>AUTHOR</h6>
-                    <p>{this.state.theBook.volumeInfo.authors.[0]}</p>
-                    <p>{this.state.theBook.volumeInfo.authors.[1] ? this.state.theBook.volumeInfo.authors.[1] : null}</p>
-                    <h6>DESCRIPTION</h6>
-                    <p>{this.state.theBook.volumeInfo.description}</p>
-                    <h6>YEAR</h6>
-                    <p>{this.state.theBook.volumeInfo.publishedDate}</p>
-                    <h6>PUBLISHING HOUSE</h6>
-                    <p>{this.state.theBook.volumeInfo.publisher}</p>
-                    {this.state.theBook.volumeInfo.industryIdentifiers ?
-                    <>
-                    <h6>ISBN</h6>
-                    <p>{this.state.theBook.volumeInfo.industryIdentifiers.[1] ? this.state.theBook.volumeInfo.industryIdentifiers.[1].identifier : null}</p>
-                    <p>{this.state.theBook.volumeInfo.industryIdentifiers.[0] ? this.state.theBook.volumeInfo.industryIdentifiers.[0].identifier : null}</p>
-                    </>
+                    <img className="masking-tape" src="../images/toppng.com-masking-tape-transparent-background-tape-transparent-758x224 copy.png"/>
+                    <div className="info-part">
+                        
+                        <h3>{this.state.theBook.volumeInfo.title.toUpperCase()}</h3>
+                        <hr />
+                        <h6>AUTHOR</h6>
+                        <p>{this.state.theBook.volumeInfo.authors.[0]}</p>
+                        <p>{this.state.theBook.volumeInfo.authors.[1] ? this.state.theBook.volumeInfo.authors.[1] : null}</p>
+                        <h6>DESCRIPTION</h6>
+                        <p>{this.state.theBook.volumeInfo.description}</p>
+                        <h6>YEAR</h6>
+                        <p>{this.state.theBook.volumeInfo.publishedDate}</p>
+                        <h6>PUBLISHING HOUSE</h6>
+                        <p>{this.state.theBook.volumeInfo.publisher}</p>
+                        {this.state.theBook.volumeInfo.industryIdentifiers ?
+                        <>
+                        <h6>ISBN</h6>
+                        <p>{this.state.theBook.volumeInfo.industryIdentifiers.[1] ? this.state.theBook.volumeInfo.industryIdentifiers.[1].identifier : null}</p>
+                        <p>{this.state.theBook.volumeInfo.industryIdentifiers.[0] ? this.state.theBook.volumeInfo.industryIdentifiers.[0].identifier : null}</p>
+                        </>
                     : null}
+                    </div>
                     </>
                     }
-                </div>
-                
                     {this.props.user ?
-                    <div>
+                    <div className="list-btns">
                     <p>{this.state.okMessage}</p>
-                    <button onClick={() => this.addToList('paperBooks')}>Paper</button>
-                    <button onClick={() => this.addToList('eBooks')}>eBook</button>
-                    <button onClick={() => this.addToList('audiobooks')}>Audiobook</button>
-                    <button onClick={() => this.addToList('pendingBooks')}>Pending</button>
-                    <button onClick={() => this.addToList('progressBooks')}>In Progress</button>
-                    <button onClick={() => this.addToList('readBooks')}>Read</button>
+                        <div className="list-btns-onelist">
+                            <p>ADD TO BOOKSHELF</p>
+                            <button className="add-to-list-btn" onClick={() => this.addToList('paperBooksAPI')}>Paper</button>
+                            <button className="add-to-list-btn" onClick={() => this.addToList('eBooksAPI')}>eBook</button>
+                            <button className="add-to-list-btn" onClick={() => this.addToList('audiobooksAPI')}>Audiobook</button>
+                            <button className="add-to-list-btn" onClick={() => this.removeFromList('paperBooksAPI')}>Delete Paper</button>
+                            <button className="add-to-list-btn" onClick={() => this.removeFromList('eBooksAPI')}>Delete eBook</button>
+                            <button className="add-to-list-btn" onClick={() => this.removeFromList('audiobooksAPI')}>Delete Audiobook</button>
+                        </div>
+                        <div className="list-btns-onelist">
+                            <p>ADD TO TRACKING</p>
+                            <button className="add-to-list-btn" onClick={() => this.addToList('pendingBooksAPI')}>Pending</button>
+                            <button className="add-to-list-btn" onClick={() => this.addToList('progressBooksAPI')}>In Progress</button>
+                            <button className="add-to-list-btn" onClick={() => this.addToList('readBooksAPI')}>Read</button>
+                            <button className="add-to-list-btn" onClick={() => this.removeFromList('pendingBooksAPI')}> Delete Pending</button>
+                            <button className="add-to-list-btn" onClick={() => this.removeFromList('progressBooksAPI')}>Delete In Progress</button>
+                            <button className="add-to-list-btn" onClick={() => this.removeFromList('readBooksAPI')}>Delete Read</button>
+                        </div>
                     </div>
                     : null }
+                </div>
+                
+                    
                 
             </div>
         )

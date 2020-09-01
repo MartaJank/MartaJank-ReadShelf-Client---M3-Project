@@ -19,7 +19,6 @@ class Private extends Component {
           <Link to={'/bookshelf'}><button className="profile-btn">My Bookshelf</button></Link>
           <Link to={'/tracking'}><button className="profile-btn">Reads Tracking</button></Link>
           <Link to={`/book-clubs/${this.props.user._id}/created`}><button className="profile-btn">My Book Clubs</button></Link>
-          <Link to={`/books/created/${this.props.user._id}`}><button className="profile-btn">Created Books</button></Link>
         </div>
       </div>
     );

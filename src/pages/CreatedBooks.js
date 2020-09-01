@@ -26,19 +26,23 @@ class CreatedBooks extends Component {
     
     render() {
         return (
-            <div>
-                <h5>BOOKS CREATED</h5>
+            <div className='created-books'>
+                <Link to={'/books/book/add'}><button className="profile-btn">CREATE A BOOK</button></Link>
+                <h5 className="created-title">BOOKS CREATED</h5>
                 <hr />
-                {this.state.listOfBooks.map(book => {
-                    return (
-                        <div>
-                            <Link to={`/books/created/one/${book._id}`}>
-                                <img src={book.imageUrl} />
-                                <p>{book.title}</p>
-                            </Link>       
-                        </div>
-                    )
-                })}
+                <div className="shown-books">
+                    {this.state.listOfBooks.map(book => {
+                        return (
+                            <div className="book-show created">
+                                <Link className="created-link" to={`/books/created/one/${book._id}`}>
+                                    <img className="created-cover" src={book.imageUrl} />
+                                    <p>{book.title}</p>
+                                </Link>       
+                            </div>
+                        )
+                    })}
+                </div>
+                
             </div>
         )
     }

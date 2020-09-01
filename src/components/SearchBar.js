@@ -27,10 +27,10 @@ class Search extends Component {
         return (
         <form className="search-div" onSubmit={this.handleSearch}>
             <label>Title
-            <input type="radio" name="where" value="intitle" onChange={this.handleChange} />
+            <input className="check" type="radio" name="where" value="intitle" onChange={this.handleChange} />
             </label>
             <label>Author
-            <input type="radio" name="where" value="inauthor" onChange={this.handleChange} />
+            <input className="check" type="radio" name="where" value="inauthor" onChange={this.handleChange} />
             </label>
 {/*             <label>Genre
             <input type="radio" name="where" value="genre" onChange={this.handleChange} />

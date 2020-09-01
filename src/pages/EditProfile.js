@@ -62,18 +62,23 @@ class EditProfile extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={e => this.handleFormSubmit(e)}>
+            <div className="form-div-border">
+                <form className="form" onSubmit={e => this.handleFormSubmit(e)}>
                     <label>Name</label>
-                    <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
+                    <input className="form-input" type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
                     <label>Email</label>
-                    <input type="text" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
-                    <input 
+                    <input className="form-input" type="text" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
+                    <input className="form-input"
                     type="file" 
                     onChange={(e) => this.handleFileUpload(e)} 
                     />
 
-                    <input type="submit" value="Submit" />
+                    <input className="form-btn" type="submit" value="Submit" />
                 </form>
+            </div>
+            <div className="form-div">
+        
+            </div>
             </div>
         )
     }

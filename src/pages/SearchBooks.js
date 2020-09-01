@@ -23,19 +23,17 @@ class SearchBooks extends Component {
 
     render() {
         return(
-            <div>
+            <div className="search-div">
                 <SearchBar filterBooks={this.dynamicSearchTitle} />
-                {this.state.filteredBooks ? this.state.filteredBooks.map(book => {
-                    return(
-                        <div>
-                            <Link to={`/books/${book.id}`}><img alt="book thumbnail" src={book.volumeInfo.imageLinks.thumbnail} /></Link>
-                            <p>{book.volumeInfo.title}</p>
-                        </div>
-                    )
-                }) : null}
-                <div>
-                    <p>Can't find the book?</p>
-                    <Link to={'/books/book/add'}>Create one!</Link>
+                <div className="shown-books">
+                    {this.state.filteredBooks ? this.state.filteredBooks.map(book => {
+                        return(
+                                <div className="book-show">
+                                   {book.volumeInfo.imageLinks.thumbnail ? <Link to={`/books/${book.id}`}><img alt="book thumbnail" src={book.volumeInfo.imageLinks.thumbnail} /></Link> : null}
+                                    <p>{book.volumeInfo.title}</p>
+                                </div>
+                        )
+                    }) : null}
                 </div>
             </div>
         )

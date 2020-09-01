@@ -26,18 +26,27 @@ class CreatedClubs extends Component {
     
     render() {
         return (
-            <div>
-                <h5>MY BOOKCLUBS</h5>
-                <hr />
+        <>
+            <h5 className="clubs-title">MY BOOKCLUBS</h5>
+            <hr className="clubs-hr" />
+                
                 {this.state.myClubs.map(club => {
                     return (
+                        
                         <div>
-                            <p>{club.title}</p>
-                            <p>{club.currentBookTitle}</p>
+                            <div className="club-card">
+                                <h3>{club.title}</h3>
+                                <hr />
+                                <p>{club.description}</p>
+                                <p>Currrent book: {club.currentBookTitle}</p>
+                                <Link to={`/book-clubs/${club._id}`}><button className="card-btn">More info</button></Link>
+                            </div>
                         </div>
+                
                     )
                 })}
-            </div>
+            
+            </>
         )
     }
 }

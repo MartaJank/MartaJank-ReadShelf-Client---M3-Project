@@ -1,5 +1,6 @@
 import React, { Component, Profiler } from "react";
 import "./App.css";
+import 'mdbreact/dist/css/mdb.css';
 import { Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -30,6 +31,8 @@ import CreatedClubs from "./pages/CreatedClubs";
 import BookshelfPaper from "./pages/BookshelfPaper";
 import BookshelfEbooks from "./pages/BookshelfEbooks";
 import BookshelfAudiobooks from "./pages/BookshelfAudiobooks";
+import JoinedClubs from "./pages/JoinedClubs";
+import ClubEdit from "./pages/ClubEdit";
 
 
 
@@ -38,9 +41,9 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className='container'>
-          <Navbar />
-
+        <Navbar /> 
           <Switch>
+        
             <Route exact path='/' component={Home} />
             <Route exact path='/books' component={SearchBooks} />
             <Route exact path='/books/:id' component={BookDetails} />
@@ -53,13 +56,15 @@ class App extends Component {
             <PrivateRoute exact path='/books/created/:id' component={CreatedBooks} />
             <PrivateRoute exact path='/books/created/one/:id' component={CreatedDetails} />
             <Route exact path='/book-clubs' component={GetAllClubs} />
-            <Route exact path='/book-clubs/:id' component={ClubDetails} />
+            <PrivateRoute exact path='/book-clubs/:id' component={ClubDetails} />
             <PrivateRoute exact path='/book-clubs/club/add' component={AddClub} />
             <PrivateRoute exact path='/book-clubs/:id/created' component={CreatedClubs} />
+            <PrivateRoute exact path='/book-clubs/:id/joined' component={JoinedClubs} />
+            <PrivateRoute exact path='/book-clubs/:id/edit' component={ClubEdit} />
             <PrivateRoute exact path='/bookshelf' component={Bookshelf} />
-            <PrivateRoute exact path='/lists/:id/bookshelf/paper' component={BookshelfPaper} />
-            <PrivateRoute exact path='/lists/:id/bookshelf/ebook' component={BookshelfEbooks} />
-            <PrivateRoute exact path='/lists/:id/bookshelf/audiobook' component={BookshelfAudiobooks} />
+            <PrivateRoute exact path='/bookshelf/paper' component={BookshelfPaper} />
+            <PrivateRoute exact path='/bookshelf/ebook' component={BookshelfEbooks} />
+            <PrivateRoute exact path='/bookshelf/audiobook' component={BookshelfAudiobooks} />
             <PrivateRoute exact path='/tracking' component={Tracking} />
             <Route exact path='/faq' component={faq} />
           </Switch>

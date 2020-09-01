@@ -7,14 +7,38 @@ body {
   background-color: #E8E3DF;
   padding: 0;
   margin: 0;
+  min-height: 700px;
+  padding-bottom: 10rem;
 }
 
 nav {
-  display: flex;
+  color: var(--brown);
 }
 
 .nav-logo {
-  height: 3rem;
+  height: 4rem;
+  padding-right: 2rem;
+  padding-top: 1.5rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 7rem;
+  width: 100%;
+}
+
+.home-cover {
+  height: 13rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 50%;
+  padding-top: 2rem;
+}
+
+.search-div {
+  padding-top: 10rem;
 }
 
 /************************ Horitzontal Scroll **************************/
@@ -92,6 +116,10 @@ ul {
   border: 2px var(--brown) solid;
   width: 8rem;
   margin-bottom: 1rem;
+  color: var(--brown);
+}
+
+.meet-links {
   color: var(--brown);
 }
 
@@ -188,6 +216,7 @@ ul {
 /********************PROFILE**************************/
 .profile-pic { 
   height: 15rem;
+  padding-top: 2rem;
 }
 
 .profile-pic-div {
@@ -222,7 +251,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 .profile-btn {
@@ -318,10 +347,335 @@ ul {
   align-items: flex-start;
 }
 
+.club-edit-form {
+  height: 45rem;
+}
+
+.form-textarea {
+  background-color: #ededed;
+  border: 2px var(--brown) solid;
+  margin-bottom: 3rem;
+  color: var(--brown);
+  height: 4rem;
+  text-align: left;
+  font-size: 1rem;
+  padding-bottom: 3rem;
+}
+
+/****************** SEARCH BOOKS ***********************/
+.search-div {
+  padding: 1rem;
+  color: var(--brown);
+  text-align: center;
+}
+
+.check {
+  margin-right: 1rem;
+}
+
+.search {
+  padding: 0.3rem;
+  border: 1px var(--brown) solid;
+  color: var(--brown);
+  -webkit-box-shadow: -1px 6px 19px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 6px 19px -11px rgba(0,0,0,0.75);
+  box-shadow: -1px 6px 19px -11px rgba(0,0,0,0.75);
+}
+
+.shown-books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  padding-bottom: 4rem;
+}
+
+.book-show {
+  display: flex;
+  flex-direction: column;
+  width: 8.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+/******************** BOOK DETAILS *********************/
+.full-book {
+  display: flex;
+  padding: 2rem 0;
+  padding-bottom: 20rem;
+}
+
+.cover-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ededed;
+  padding: 0 0.4rem;
+  padding-bottom: 1rem;
+  padding-right: 0.7rem;
+  width: 40%;
+  margin-bottom: 1.5rem;
+  height: 100rem;
+}
+
+.rating {
+  font-size: 0.8rem;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.info-part {
+  font-size: 0.7rem;
+  border: 2px var(--brown) solid;
+  width: 52%;
+  padding: 0.5rem;
+  padding-bottom: 0;
+  position: absolute;
+  right: 0;
+  margin-top: 1.5rem;
+  height: 100rem;
+}
+
+.info-part > h3 {
+  font-weight: 400;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.info-part > hr {
+  width: 8rem;
+}
+
+.info-part > h6 {
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 0;
+  padding-top: 0.5rem;
+}
+
+.info-part > p {
+  padding-top: 0;
+}
+
+.list-btns {
+  position: absolute;
+  overflow: visible;
+  padding-top: 105rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: space-around !important;
+  align-items: center !important;
+}
+
+.list-btns-onelist { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.list-btns-onelist > p {
+  font-size: 0.8rem;
+}
+
+.add-to-list-btn {
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0.1rem;
+  border-radius: 0;
+  border: 2px var(--brown) solid;
+  width: 8rem;
+  margin-bottom: 1rem;
+  color: var(--brown);
+  background-color: #ededed;
+}
+
+.masking-tape {
+  height: 2rem;
+  position: absolute;
+  overflow: visible;
+  padding-top: 0.5rem;
+  padding-left: 13rem;
+}
+
+/******************** FAQ ***************************/
+.faq {
+  border: 2px  var(--brown) solid;
+  margin: 1rem;
+  margin-top: 0.1;
+  height: 6rem;
+  width: 82%;
+  position: absolute;
+  overflow: visible;
+  font-size: 0.9rem;
+  padding-left: 1rem;
+}
+
+.faq-bg {
+  margin: 1.5rem;
+  margin-top: 0;
+  height: 6rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #ededed;
+}
+
+.question {
+  font-size: 1rem;
+  font-weight: 400;
+  bottom: 0;
+  line-height: 0;
+  padding-top: 2rem;
+}
+
+.right {
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.left {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+/****************** CREATED BOOKS ********************/
+.created-books {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.created-title {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 0;
+}
+
+.created-books > hr {
+  width: 7rem;
+  line-height: 0;
+}
+
+.created-cover {
+  height: 12rem;
+}
+
+.created-link {
+  text-align: center;
+  color: var(--brown);
+  text-decoration: none;
+}
+
+.created {
+  height: 70rem;
+}
+
+.created-btns {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/******************** ALL CLUBS ************************/
+.club-card {
+  display: flex;
+  padding: 0 3rem;
+  border: 2px var(--brown) solid;
+  margin: 2rem;
+}
+
+.club-btns {
+  padding: 1rem;
+}
+
+.club-btn {
+  margin: 0.2rem;
+  padding: 0.5rem;
+  width: 12rem;
+  border-radius: none;
+  border: 2px var(--brown) solid;
+  color: var(--brown);
+}
+
+.club-pic {
+  height: 7.5rem;
+  position: absolute;
+  padding-top: 4.2rem;
+  left: 0;
+  padding-left: 1rem;
+}
+
+.img-div {
+  width: 30%;
+}
+
+.club-info-div {
+  padding-left: 6rem;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.club-info-div > h3 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.club-info-div > hr {
+  width: 5rem;
+}
+
+.club {
+  height: 50rem;
+}
+
+.club-detail-btn {
+  position: absolute;
+  overflow: visible;
+  padding-top: 54rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: space-around !important;
+  align-items: center !important;
+}
+
+.my-clubs {
+  height: 30rem;
+}
+
+.club-pic-my {
+  height: 6rem;
+}
+
+.clubs-title {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.clubs-hr {
+  width: 10rem;
+}
+
 /********************* FOOTER *************************/
 .footer {
-  position: relative;
-  bottom: -80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -341,4 +695,842 @@ ul {
 
 .footer-info {
   text-align: right;
+}
+
+.bksh-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+/*************** MEDIA QUERIES****************/
+
+@media screen and (min-width: 600px) {
+  .home-cover {
+    height: 20rem;
+  }
+
+  .home-bookshelf {
+    height: 25rem;
+  }
+  
+  .description-img {
+    height: 25rem;
+  }
+  
+  .home-right-title {
+    font-size: 1rem;
+  }
+  
+  .home-right-p {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .home-club-all {
+    margin-bottom: 3rem;
+  }
+  
+  .main-hr {
+    width: 95%;
+    height: 1px;
+    background-color: var(--brown);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .description-img-club {
+    height: 20rem;
+  }
+  
+  /******************** FORM DIVS *************************/
+  .form-div {
+    margin-left: auto;
+    margin-right: auto;
+    height: 27rem;
+    width: 19rem;
+  }
+  
+  .form-div-border {
+    border: 2px  var(--brown) solid;
+    margin-left: 20%;
+    margin-right: auto;
+    display: block;
+    height: 27rem;
+    width: 18rem;
+  }
+  
+  .club-edit-form {
+    height: 50rem;
+  }
+  
+  /******************** BOOK DETAILS *********************/
+  .cover-part {
+    padding: 0 1.2rem;
+    padding-bottom: 1rem;
+    width: 40%;
+    margin-bottom: 1.5rem;
+    height: 120rem;
+  }
+  
+  .rating {
+    font-size: 1rem;
+  }
+  
+  .info-part {
+    font-size: 1rem;
+    height: 120rem;
+  }
+  
+  .info-part > h3 {
+    font-size: 1.1rem;
+  }
+  
+  .info-part > hr {
+    width: 10rem;
+    background-color: var(--brown);
+  }
+  
+  .info-part > p {
+    padding-top: 1rem;
+  }
+  
+  .list-btns {
+    padding-top: 122rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    margin-left: 20%;
+    margin-right: auto;
+  }
+  
+  .masking-tape {
+    padding-left: 24rem;
+  }
+  
+  /******************** FAQ ***************************/
+  .faq {
+    border: 2px  var(--brown) solid;
+    margin: 1rem;
+    margin-top: 0.1;
+    height: 6rem;
+    width: 82%;
+    position: absolute;
+    overflow: visible;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+  }
+  
+  .faq-bg {
+    margin: 1.5rem;
+    margin-top: 0;
+    height: 6rem;
+    width: 82%;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #ededed;
+  }
+  
+  .question {
+    font-size: 1rem;
+    font-weight: 400;
+    bottom: 0;
+    line-height: 0;
+    padding-top: 2rem;
+  }
+  
+  .right {
+    text-align: right;
+    padding-right: 2rem;
+  }
+  
+  .left {
+    text-align: left;
+    padding-left: 2rem;
+  }
+  
+  /****************** CREATED BOOKS ********************/
+  .created-books {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .created-title {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 0;
+  }
+  
+  .created-books > hr {
+    width: 7rem;
+    line-height: 0;
+  }
+  
+  .created-cover {
+    height: 12rem;
+  }
+  
+  .created-link {
+    text-align: center;
+    color: var(--brown);
+    text-decoration: none;
+  }
+  
+  .created {
+    height: 70rem;
+  }
+  
+  .created-btns {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  /******************** ALL CLUBS ************************/
+  .club-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 3rem;
+    border: 2px var(--brown) solid;
+    margin: 2rem;
+    height: 15rem;
+  }
+  
+  .club-btns {
+    padding: 1rem;
+  }
+  
+  .club-btn {
+    margin: 0.2rem;
+    padding: 0.5rem;
+    width: 12rem;
+    border-radius: none;
+    border: 2px var(--brown) solid;
+    color: var(--brown);
+  }
+  
+  .club-pic {
+    height: 10rem;
+    position: absolute;
+    padding-top: 6rem;
+    left: 0;
+    padding-left: 1rem;
+  }
+  
+  .img-div {
+    width: 30%;
+  }
+  
+  .club-card > h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .club-card > hr {
+    width: 12rem;
+    background-color: var(--brown);
+  }
+  
+  .club {
+    height: 50rem;
+  }
+  
+  .club-detail-btn {
+    position: absolute;
+    overflow: visible;
+    padding-top: 54rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: space-around !important;
+    align-items: center !important;
+  }
+  
+  .my-clubs {
+    height: 30rem;
+  }
+  
+  .club-pic-my {
+    height: 6rem;
+  }
+  
+  .clubs-title {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .clubs-hr {
+    width: 10rem;
+  }
+  
+  /********************* FOOTER *************************/
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--brown);
+    font-size: 0.6rem;
+    padding: 1rem;
+    line-height: 0.4;
+    background-color: #ededed;
+    -webkit-box-shadow: inset 0px 6px 16px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 6px 16px -8px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 6px 16px -8px rgba(0,0,0,0.75);
+  }
+  
+  .footer-link {
+    color: var(--brown);
+  }
+  
+  .footer-info {
+    text-align: right;
+  }
+  
+}
+
+@media screen and (min-width: 1000px) {
+  .home-cover {
+    height: 35rem;
+  }
+
+  .home-bookshelf {
+    height: 35rem;
+  }
+  
+  .description-img {
+    height: 35rem;
+    width: 100%;
+  }
+  
+  .home-right-title {
+    font-size: 2rem;
+  }
+  
+  .home-right-p {
+    font-size: 1rem;
+    padding: 1rem 4rem;
+    text-align: center;
+  }
+
+  .home-club-all {
+    margin-bottom: 3rem;
+  }
+  
+  .main-hr {
+    width: 95%;
+    height: 1px;
+    background-color: var(--brown);
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  
+  .description-img-club {
+    height: 20rem;
+  }
+  
+  /******************** FORM DIVS *************************/
+  .form-div {
+    margin-left: auto;
+    margin-right: auto;
+    height: 27rem;
+    width: 19rem;
+  }
+  
+  .form-div-border {
+    border: 2px  var(--brown) solid;
+    margin-left: 38%;
+    margin-right: auto;
+    display: block;
+    height: 27rem;
+    width: 18rem;
+  }
+  
+  .club-edit-form {
+    height: 50rem;
+  }
+  
+  /******************** BOOK DETAILS *********************/
+  .cover-part {
+    padding: 0 1.2rem;
+    padding-bottom: 1rem;
+    width: 45%;
+    margin-bottom: 1.5rem;
+    height: 120rem;
+  }
+  
+  .rating {
+    font-size: 1rem;
+  }
+  
+  .info-part {
+    font-size: 1.2rem;
+    height: 120rem;
+  }
+  
+  .info-part > h3 {
+    font-size: 2rem;
+    padding-top: 5rem;
+  }
+  
+  .info-part > hr {
+    width: 10rem;
+    background-color: var(--brown);
+  }
+  
+  .info-part > p {
+    padding-top: 1rem;
+    padding-left: 4rem;
+  }
+  
+  .list-btns {
+    padding-top: 122rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    margin-left: 20%;
+    margin-right: auto;
+  }
+  
+  .masking-tape {
+    padding-left: 55rem;
+    height: 5rem;
+  }
+  
+  /******************** FAQ ***************************/
+  .faq {
+    border: 2px  var(--brown) solid;
+    margin: 1rem;
+    margin-top: 0.1;
+    height: 6rem;
+    width: 82%;
+    position: absolute;
+    overflow: visible;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+  }
+  
+  .faq-bg {
+    margin: 1.5rem;
+    margin-top: 0;
+    height: 6rem;
+    width: 82%;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #ededed;
+  }
+  
+  .question {
+    font-size: 1rem;
+    font-weight: 400;
+    bottom: 0;
+    line-height: 0;
+    padding-top: 2rem;
+  }
+  
+  .right {
+    text-align: right;
+    padding-right: 15rem;
+  }
+  
+  .left {
+    text-align: left;
+    padding-left: 2rem;
+  }
+  
+  /****************** CREATED BOOKS ********************/
+  .created-books {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .created-title {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 0;
+  }
+  
+  .created-books > hr {
+    width: 7rem;
+    line-height: 0;
+  }
+
+  
+  .created-link {
+    text-align: center;
+    color: var(--brown);
+    text-decoration: none;
+  }
+  
+  .created {
+    height: 70rem;
+  }
+  
+  .created-btns {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  /******************** ALL CLUBS ************************/
+  .club-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 3rem;
+    border: 2px var(--brown) solid;
+    margin: 2rem;
+    height: 15rem;
+  }
+  
+  .club-btns {
+    padding: 1rem;
+  }
+  
+  .club-btn {
+    margin: 0.2rem;
+    padding: 0.5rem;
+    width: 12rem;
+    border-radius: none;
+    border: 2px var(--brown) solid;
+    color: var(--brown);
+  }
+  
+  .club-pic {
+    height: 10rem;
+    position: absolute;
+    padding-top: 6rem;
+    left: 0;
+    padding-left: 1rem;
+  }
+  
+  .img-div {
+    width: 30%;
+  }
+  
+  .club-card > h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .club-card > hr {
+    width: 12rem;
+    background-color: var(--brown);
+  }
+  
+  .club {
+    height: 50rem;
+  }
+  
+  .club-detail-btn {
+    position: absolute;
+    overflow: visible;
+    padding-top: 54rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: space-around !important;
+    align-items: center !important;
+  }
+  
+  .my-clubs {
+    height: 30rem;
+  }
+  
+  .club-pic-my {
+    height: 6rem;
+  }
+  
+  .clubs-title {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .clubs-hr {
+    width: 10rem;
+  }
+
+  .created-cover {
+    height: 20rem;
+    width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /********************* FOOTER *************************/
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--brown);
+    font-size: 0.6rem;
+    padding: 1rem;
+    line-height: 0.4;
+    background-color: #ededed;
+    -webkit-box-shadow: inset 0px 6px 16px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 6px 16px -8px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 6px 16px -8px rgba(0,0,0,0.75);
+  }
+  
+  .footer-link {
+    color: var(--brown);
+  }
+  
+  .footer-info {
+    text-align: right;
+  }
+
+  /************************ Horitzontal Scroll **************************/
+
+.horitzontal-scroll {
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
+.hs {
+  display: flex;
+  flex-direction: row;
+  padding: 0 28px;
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hs > li,
+.item {
+  scroll-snap-align: center;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hs > li {
+  background-color: #ededed;
+  -webkit-box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.75);
+  min-height: 20rem;
+  width: 15rem;
+  color: var(--brown);
+  padding: 0 1rem;
+}
+
+.card-title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding-top: 1.7rem;
+  margin: 0;
+}
+
+.card-hr {
+  padding-top: 0;
+  border: 1px var(--brown) solid;
+  width: 8rem;
+
+}
+
+.card-text {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--brown);
+}
+
+.cards-img {
+  height: 11rem;
+  width: 17rem;
+  padding: 0;
+  margin: 0;
+}
+
+.card-btn {
+  border-radius: 0;
+  border: 2px var(--brown) solid;
+  width: 8rem;
+  margin-bottom: 1rem;
+  color: var(--brown);
+}
+
+.meet-links {
+  color: var(--brown);
+  padding-left: 6rem;
+}
+  
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
 }
