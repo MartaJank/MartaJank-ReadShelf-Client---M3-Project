@@ -33,6 +33,9 @@ import BookshelfEbooks from "./pages/BookshelfEbooks";
 import BookshelfAudiobooks from "./pages/BookshelfAudiobooks";
 import JoinedClubs from "./pages/JoinedClubs";
 import ClubEdit from "./pages/ClubEdit";
+import TrackingPending from "./pages/TrackingPending";
+import TrackingProgress from "./pages/TrackingProgress";
+import TrackingRead from "./pages/TrackingRead";
 
 
 
@@ -66,6 +69,9 @@ class App extends Component {
             <PrivateRoute exact path='/bookshelf/ebook' component={BookshelfEbooks} />
             <PrivateRoute exact path='/bookshelf/audiobook' component={BookshelfAudiobooks} />
             <PrivateRoute exact path='/tracking' component={Tracking} />
+            <PrivateRoute exact path='/tracking/pending' component={TrackingPending} />
+            <PrivateRoute exact path='/tracking/progress' component={TrackingProgress} />
+            <PrivateRoute exact path='/tracking/read' component={TrackingRead} />
             <Route exact path='/faq' component={faq} />
           </Switch>
 

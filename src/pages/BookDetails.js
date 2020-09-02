@@ -9,6 +9,7 @@ class BookDetails extends Component {
         this.state = {
             theBook: {},
             okMessage: '',
+            removedMessage: '',
             allKindOfBooksList: []
         };
     }
@@ -73,7 +74,7 @@ class BookDetails extends Component {
             .delete(`${process.env.REACT_APP_API_URI}/books/${this.props.user._id}/pull/${listName}/${bookobjId}`, {withCredentials: true})
             .then(responseFromApi => {
                 console.log(responseFromApi, 'sdgjdgjsjbbkfs')
-                this.setState({okMessage: 'Book Added'})
+                this.setState({removedMessage: 'Removed from List'})
             })
             .catch(err => {
                 console.log(err);
@@ -117,21 +118,23 @@ class BookDetails extends Component {
                     }
                     {this.props.user ?
                     <div className="list-btns">
-                    <p>{this.state.okMessage}</p>
                         <div className="list-btns-onelist">
-                            <p>ADD TO BOOKSHELF</p>
+                            <p className="btn-orient">ADD TO BOOKSHELF</p>
                             <button className="add-to-list-btn" onClick={() => this.addToList('paperBooksAPI')}>Paper</button>
                             <button className="add-to-list-btn" onClick={() => this.addToList('eBooksAPI')}>eBook</button>
                             <button className="add-to-list-btn" onClick={() => this.addToList('audiobooksAPI')}>Audiobook</button>
+                            <p className="btn-orient">REMOVE FROM BOOKSHELF</p>
                             <button className="add-to-list-btn" onClick={() => this.removeFromList('paperBooksAPI')}>Delete Paper</button>
                             <button className="add-to-list-btn" onClick={() => this.removeFromList('eBooksAPI')}>Delete eBook</button>
                             <button className="add-to-list-btn" onClick={() => this.removeFromList('audiobooksAPI')}>Delete Audiobook</button>
                         </div>
+                        <p>{this.state.okMessage}</p>
                         <div className="list-btns-onelist">
-                            <p>ADD TO TRACKING</p>
+                            <p className="btn-orient">ADD TO TRACKING</p>
                             <button className="add-to-list-btn" onClick={() => this.addToList('pendingBooksAPI')}>Pending</button>
                             <button className="add-to-list-btn" onClick={() => this.addToList('progressBooksAPI')}>In Progress</button>
                             <button className="add-to-list-btn" onClick={() => this.addToList('readBooksAPI')}>Read</button>
+                            <p className="btn-orient">REMOVE FROM TRACKING</p>
                             <button className="add-to-list-btn" onClick={() => this.removeFromList('pendingBooksAPI')}> Delete Pending</button>
                             <button className="add-to-list-btn" onClick={() => this.removeFromList('progressBooksAPI')}>Delete In Progress</button>
                             <button className="add-to-list-btn" onClick={() => this.removeFromList('readBooksAPI')}>Delete Read</button>

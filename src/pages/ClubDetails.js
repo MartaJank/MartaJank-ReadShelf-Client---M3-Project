@@ -9,6 +9,7 @@ class ClubDetails extends Component {
         this.state = {
             theClub: {},
             okMessage: '',
+            notMessage: '',
         };
     }
     
@@ -30,13 +31,28 @@ class ClubDetails extends Component {
             });
     };
 
-    addToList = () => {
+    joinClub = () => {
         const { params } = this.props.match;
+        console.log('params', params.id)
         axios
-            .post(`${process.env.REACT_APP_API_URI}/books/${this.state.theClub._id}`, {withCredentials: true})
+            .post(`${process.env.REACT_APP_API_URI}/join-club/${this.props.user._id}/${params.id}`, {withCredentials: true})
             .then(responseFromApi => {
-                console.log(responseFromApi)
-                this.setState({okMessage: 'Club Added'})
+                console.log('club', responseFromApi)
+                this.setState({okMessage: 'Club Joined'})
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+
+    unjoinClub = () => {
+        const { params } = this.props.match;
+        console.log('params', params.id)
+        axios
+            .delete(`${process.env.REACT_APP_API_URI}/unjoin/${this.props.user._id}/${params.id}`, {withCredentials: true})
+            .then(responseFromApi => {
+                console.log('club', responseFromApi)
+                this.setState({notMessage: 'Club Unjoined'})
             })
             .catch(err => {
                 console.log(err);
@@ -45,7 +61,7 @@ class ClubDetails extends Component {
 
     deleteClub = () => {
         const { params } = this.props.match;
-        axios.delete(`http://localhost:4000/book-clubs/${params.id}`)
+        axios.delete(`${process.env.REACT_APP_API_URI}/book-clubs/${params.id}`)
         .then( () =>{
             this.props.history.push('/book-clubs');
         
@@ -80,9 +96,22 @@ class ClubDetails extends Component {
                             <button className="add-to-list-btn" onClick={() => this.deleteClub()}>DELETE</button>
                         </div>
                         : 
-                        <button className="add-to-list-btn" onClick={() => this.addToList()}>JOIN</button>
+                        <div>
+                        {user.joinedBookClubs.includes(this.state.theClub._id) ?
+                            <div>
+                                <button className="add-to-list-btn" onClick={() => this.unjoinClub()}>UNJOIN</button>
+                                <p>{this.state.notMessage}</p>
+                            </div>
+                         :   
+                            <div>
+                                <button className="add-to-list-btn" onClick={() => this.joinClub()}>JOIN</button>
+                                <p>{this.state.okMessage}</p>
+                            </div>
+                        }    
+                        </div>  
                     }
                 </div>
+                
             </div>
         )
     }
