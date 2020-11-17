@@ -2,7 +2,7 @@ import React from 'react'
 
 const faq = () => {
     return (
-        <div>
+        <div className="faq-section">
             <article>
                 <h3 className="question right">What is this site meant for?</h3>
                 <div className="form-div-border faq">

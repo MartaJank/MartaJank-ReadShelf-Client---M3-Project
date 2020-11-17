@@ -29,7 +29,7 @@ class SearchBooks extends Component {
                     {this.state.filteredBooks ? this.state.filteredBooks.map(book => {
                         return(
                                 <div className="book-show">
-                                   {book.volumeInfo.imageLinks.thumbnail ? <Link to={`/books/${book.id}`}><img alt="book thumbnail" src={book.volumeInfo.imageLinks.thumbnail} /></Link> : null}
+                                   {book && book.volumeInfo && book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail ? <Link to={`/books/${book.id}`}><img alt="book thumbnail" src={book.volumeInfo.imageLinks.thumbnail} /></Link> : null}
                                     <p>{book.volumeInfo.title}</p>
                                 </div>
                         )

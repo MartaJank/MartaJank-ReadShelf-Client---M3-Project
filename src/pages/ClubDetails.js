@@ -79,7 +79,6 @@ class ClubDetails extends Component {
                     <img className="created-cover" src={this.state.theClub.bookToReadCover} />
                     <p className="rating">{this.state.theClub.currentBookTitle}</p>
                 </div>
-                <img className="masking-tape" src="../images/toppng.com-masking-tape-transparent-background-tape-transparent-758x224 copy.png"/>
                 <div className="info-part club">
                     <h3>{this.state.theClub.title}</h3>
                     <hr />
@@ -97,17 +96,17 @@ class ClubDetails extends Component {
                         </div>
                         : 
                         <div>
-                        {user.joinedBookClubs.includes(this.state.theClub._id) ?
+                        
                             <div>
                                 <button className="add-to-list-btn" onClick={() => this.unjoinClub()}>UNJOIN</button>
                                 <p>{this.state.notMessage}</p>
                             </div>
-                         :   
+                           
                             <div>
                                 <button className="add-to-list-btn" onClick={() => this.joinClub()}>JOIN</button>
                                 <p>{this.state.okMessage}</p>
                             </div>
-                        }    
+                         
                         </div>  
                     }
                 </div>

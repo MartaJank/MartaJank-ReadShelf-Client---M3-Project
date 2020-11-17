@@ -29,7 +29,7 @@ class GetAllClubs extends Component {
             <div>
                 <div className="created-btns club-btns">
                     <Link to={'/book-clubs/club/add'}><button className="club-btn">CREATE A BOOK CLUB</button></Link>
-                     <Link to={`/book-clubs/${this.props.user._id}/created`}><button className="club-btn">MY BOOKCLUBS</button></Link>
+                     {/* <Link to={`/book-clubs/${this.props.user._id}/created`}><button className="club-btn">MY BOOKCLUBS</button></Link> */}
                 </div>
                 
                 {this.state.listOfClubs.map(club => {
